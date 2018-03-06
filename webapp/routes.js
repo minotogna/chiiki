@@ -3,12 +3,14 @@ import React from 'react'
 import Route from 'route-parser'
 
 import SearchView from './search/searchView'
+import EditJobView from './job/editJobView'
 import view1 from './view1'
 import view2 from './view2'
 
 const routeMappings = {
   '/': SearchView,
   '/index.html': SearchView,
+  '/jobs/job': EditJobView,
   '/view1': view1,
   '/view1/:p1': view1,
   '/view2': view2
