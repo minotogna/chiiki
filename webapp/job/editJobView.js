@@ -3,7 +3,7 @@ import PageTemplate from '../app-components/pageTemplate'
 
 const EditJobTextInputRow = ({field}) =>
   <div className="form-group row">
-    <label for={field} className="col-sm-2 col-form-label">Email</label>
+    <label htmlFor={field} className="col-sm-2 col-form-label">Email</label>
     <div className="col">
       <input type="email"
              className="form-control"
@@ -23,7 +23,7 @@ class EditJobView extends React.Component {
 
   render () {
     return <PageTemplate>
-      <div className="container-fluid">
+      <div className="container-fluid app-container">
         <EditJobForm/>
       </div>
     </PageTemplate>

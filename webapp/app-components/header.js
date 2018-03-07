@@ -11,13 +11,13 @@ const Header = () => {
       <div className="header header-transparent py-1 py-lg-0">
         <div className="header-inner container">
           <div className="header-brand">
-            <a className="header-brand-text header-brand-text-sm"
-               href="index.html" title="Home">
+            <Link to="/" className="header-brand-text header-brand-text-sm"
+               title="Home">
               <h1>
                 <span className="header-brand-text-alt">Chii</span>ki<span
                 className="header-brand-text-alt">.</span>
               </h1>
-            </a>
+            </Link>
             <div className="header-divider d-none d-lg-block"></div>
             <div className="header-slogan text-sm d-none d-lg-block">Something
               here?
@@ -58,7 +58,7 @@ const Header = () => {
                 {/*</li>*/}
               </ul>
             </div>
-            <Link to="/jobs/job"
+            <Link to="/app/jobs/job"
                   className="btn btn-primary btn-rounded btn-sm text-uppercase font-weight-bold">
               Post Job
             </Link>

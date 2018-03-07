@@ -1,6 +1,8 @@
+import './app.scss'
+
 import React from 'react'
 
-import {Switch, Route} from 'react-router'
+import { Switch, Route } from 'react-router'
 
 import SearchView from '../search/searchView'
 import EditJobView from '../job/editJobView'
@@ -8,9 +10,9 @@ import EditJobView from '../job/editJobView'
 const App = () => {
 
   return <Switch>
-    <Route exact path="/" component={SearchView} />
-    <Route exact path="/index.html" component={SearchView} />
-    <Route path="/jobs/job" component={EditJobView} />
+    <Route exact path="/" component={SearchView}/>
+    <Route exact path="/index.html" component={SearchView}/>
+    <Route path="/app/jobs/job" component={EditJobView}/>
 
   </Switch>
 
