@@ -7,4 +7,4 @@ if [ -z "$1" ]
 fi
 
 . .env
-db-migrate --config server/migration/database.json --migrations-dir server/migration/migrations create $1 --sql-file
+db-migrate --config server/migration/migrationConfig.js --migrations-dir server/migration/migrations create $1 --sql-file
