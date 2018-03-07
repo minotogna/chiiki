@@ -2,7 +2,7 @@ import './header.scss'
 
 import React from 'react'
 
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return <div id="header">
@@ -28,7 +28,9 @@ const Header = () => {
             <a href="#top"
                className="btn btn-link btn-icon text-white op-6 header-btn float-right d-lg-none"
                data-toggle="jpanel-menu" data-target=".navbar-main"
-               data-direction="right"> <i className="fa fa-bars"></i> </a>
+               data-direction="right">
+              <i className="fa fa-bars"></i>
+            </a>
           </div>
 
           <div className="navbar navbar-expand-md">
@@ -36,10 +38,10 @@ const Header = () => {
               <ul
                 className="nav navbar-nav navbar-dark mr-lg-2 dropdown-effect-fade">
                 <li className="nav-item d-lg-flex">
-                  <a href="/jobs/job" className="nav-link">
+                  <Link to="/" className="nav-link">
                     <i className="fas fa-home nav-link-icon"></i>
                     <span className="d-none">Home</span>
-                  </a>
+                  </Link>
                 </li>
                 {/*<li className="nav-item d-lg-flex dropdown">*/}
                 {/*<a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Jobs</a>*/}
@@ -56,9 +58,10 @@ const Header = () => {
                 {/*</li>*/}
               </ul>
             </div>
-            <a href="#"
-               className="btn btn-primary btn-rounded btn-sm text-uppercase font-weight-bold">Post
-              Job</a>
+            <Link to="/jobs/job"
+                  className="btn btn-primary btn-rounded btn-sm text-uppercase font-weight-bold">
+              Post Job
+            </Link>
           </div>
         </div>
       </div>

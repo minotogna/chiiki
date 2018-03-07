@@ -4,12 +4,14 @@ import './app-styles/app-style.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import routes from './routes'
-import { Router } from './router'
+import { BrowserRouter } from 'react-router-dom'
+import App from './app/app'
 
 function renderApp () {
   ReactDOM.render(
-    <Router routes={routes}/>
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>
     ,
     document.getElementById('main'),
   )
