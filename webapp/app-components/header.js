@@ -2,7 +2,7 @@ import './header.scss'
 
 import React from 'react'
 
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const Header = () => {
   return <div id="header">
@@ -36,10 +36,10 @@ const Header = () => {
               <ul
                 className="nav navbar-nav navbar-dark mr-lg-2 dropdown-effect-fade">
                 <li className="nav-item d-lg-flex">
-                  <Link to="/jobs/job" className="nav-link">
+                  <a href="/jobs/job" className="nav-link">
                     <i className="fas fa-home nav-link-icon"></i>
                     <span className="d-none">Home</span>
-                  </Link>
+                  </a>
                 </li>
                 {/*<li className="nav-item d-lg-flex dropdown">*/}
                 {/*<a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Jobs</a>*/}

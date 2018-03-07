@@ -20,13 +20,7 @@ const alwaysInUseplugins = [
       __SYSTEM_VERSION__: `"${versionString}"`,
       __BUST__: `"${uuidv4()}"`
     }
-  ),
-  new webpack.ProvidePlugin({
-    jQuery: 'jquery',
-    $: 'jquery',
-    jquery: 'jquery',
-    Popper: 'popper.js'
-  })
+  )
 ]
 
 const uglifyPlugin = new webpack.optimize.UglifyJsPlugin({
