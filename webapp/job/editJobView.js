@@ -24,7 +24,13 @@ class EditJobView extends React.Component {
   render () {
     return <PageTemplate>
       <div className="container-fluid app-container">
-        <EditJobForm/>
+
+        <div className="row justify-content-center">
+          <div className="col-md-8">
+            <EditJobForm/>
+          </div>
+        </div>
+
       </div>
     </PageTemplate>
   }

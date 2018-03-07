@@ -8,7 +8,7 @@ const Header = () => {
   return <div id="header">
     <div data-toggle="sticky">
 
-      <div className="header header-transparent py-1 py-lg-0">
+      <div className="header header-transparent">
         <div className="header-inner container">
           <div className="header-brand">
             <Link to="/" className="header-brand-text header-brand-text-sm"
@@ -19,8 +19,8 @@ const Header = () => {
               </h1>
             </Link>
             <div className="header-divider d-none d-lg-block"></div>
-            <div className="header-slogan text-sm d-none d-lg-block">Something
-              here?
+            <div className="header-slogan text-sm d-none d-lg-block">
+              Something here?
             </div>
           </div>
           <div className="header-block order-12">
