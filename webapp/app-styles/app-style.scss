@@ -1,10 +1,20 @@
 @import "~bootstrap/scss/bootstrap";
-
 @import "theme-scss/theme-style";
 @import "theme-scss/custom-style";
-
 @import "fontawsome-scss/fontawesome";
 @import "fontawsome-scss/fa-solid";
 @import "fontawsome-scss/fa-regular";
 @import "fontawsome-scss/fa-brands";
 
+.form-check-inline {
+  padding: 0.375rem 0.75rem;;
+}
+
+.form-group {
+
+  [class*="col"] {
+    display: flex;
+    align-items: center;
+  }
+
+}
