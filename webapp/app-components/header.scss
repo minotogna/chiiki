@@ -12,6 +12,7 @@
   padding: 15px 0;
   border-bottom: 1px solid rgba(#b771b0, .3);
 }
+
 //@include media-breakpoint-up(sm) {
 //  .header{
 //    padding: 20px 0;
@@ -24,4 +25,10 @@
 .header-transparent {
   background-color: transparent !important;
   border-bottom: 1px solid rgba(#b771b0, .3) !important;
+}
+
+// TOCHECK!
+.navbar .navbar-nav > .nav-item > .nav-link:hover,
+.navbar .navbar-nav > .nav-item > .nav-link:focus {
+  color: lighten(grey, 20%);
 }

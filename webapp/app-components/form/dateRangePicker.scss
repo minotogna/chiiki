@@ -1,0 +1,51 @@
+@import "../../app-styles/variables";
+
+/* DayPickerInput */
+$border-radius-range: 3px !important;
+.InputFromTo {
+
+  .DayPickerInput {
+    display: inline-block;
+    width: 40%;
+  }
+
+  .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+    background-color: lighten($color-primary, 30%) !important;
+    color: #4a90e2;
+  }
+
+  .DayPicker-Day {
+    border-radius: 0 !important;
+  }
+
+  .DayPicker-Day--start {
+    border-top-left-radius: $border-radius-range;
+    border-bottom-left-radius: $border-radius-range;
+  }
+
+  .DayPicker-Day--end {
+    border-top-right-radius: $border-radius-range;
+    border-bottom-right-radius: $border-radius-range;
+  }
+
+  .DayPickerInput-Overlay {
+    width: 550px;
+  }
+
+  .InputFromTo-to .DayPickerInput-Overlay {
+    margin-left: -198px;
+  }
+
+  .DayPickerInput-OverlayWrapper {
+    position: relative;
+  }
+
+  .DayPickerInput-Overlay {
+    left: 0;
+    z-index: 1;
+    position: absolute;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+
+}
