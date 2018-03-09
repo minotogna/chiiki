@@ -1,5 +1,3 @@
-import './syle.scss'
-
 import React from 'react'
 import PageTemplate from '../app-components/pageTemplate'
 
@@ -30,6 +28,13 @@ const EditJobForm = () => {
         )
       })
     }
+
+    <div className="row mt-md-5 mb-md-5 justify-content-center">
+      <div className="col text-center">
+        <button type="button" className="btn btn-lg btn-outline-secondary px-md-5 mx-1 mx-md-2">Cancel</button>
+        <button type="button" className="btn btn-lg btn-primary px-md-5 mx-1 mx-md-2">Submit</button>
+      </div>
+    </div>
 
   </form>
 }

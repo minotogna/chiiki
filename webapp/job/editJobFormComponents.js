@@ -3,7 +3,7 @@ import React from 'react'
 import DateRangePicker from '../app-components/form/dateRangePicker'
 
 export const EditJobTextInputRow = ({field, label, placeholder}) =>
-  <div className="form-group row">
+  <div className="form-group row mb-md-4">
     <label htmlFor={field}
            className="col-sm-2 col-form-label text-md-right">{label}</label>
     <div className="col">
@@ -15,7 +15,7 @@ export const EditJobTextInputRow = ({field, label, placeholder}) =>
   </div>
 
 export const EditJobTextAreaInputRow = ({field, label, placeholder, rows = 4}) =>
-  <div className="form-group row">
+  <div className="form-group row mb-md-4">
     <label htmlFor={field}
            className="col-sm-2 col-form-label text-md-right">{label}</label>
     <div className="col">
@@ -25,7 +25,7 @@ export const EditJobTextAreaInputRow = ({field, label, placeholder, rows = 4}) =
   </div>
 
 export const EditJobSelectInputRow = ({field, label, placeholder = 'Select', options = []}) =>
-  <div className="form-group row">
+  <div className="form-group row mb-md-4">
     <label htmlFor={field}
            className="col-sm-2 col-form-label text-md-right">{label}</label>
     <div className="col">
@@ -41,7 +41,7 @@ export const EditJobSelectInputRow = ({field, label, placeholder = 'Select', opt
   </div>
 
 export const EditJobBooleanInputRow = ({field, label}) =>
-  <div className="form-group row">
+  <div className="form-group row mb-md-4">
     <label
       className="col-sm-2 col-form-label text-md-right">{label}</label>
     <div className="col">
@@ -62,12 +62,12 @@ export const EditJobBooleanInputRow = ({field, label}) =>
     </div>
   </div>
 
-export const ApplicationPeriod = ({field, label}) => <div
-  className="form-group row">
-  <label className="col-sm-2 col-form-label text-md-right">
-    {label}
-  </label>
-  <div className="col">
-    <DateRangePicker/>
+export const ApplicationPeriod = ({field, label}) =>
+  <div className="form-group row mb-md-4">
+    <label className="col-sm-2 col-form-label text-md-right">
+      {label}
+    </label>
+    <div className="col">
+      <DateRangePicker/>
+    </div>
   </div>
-</div>
