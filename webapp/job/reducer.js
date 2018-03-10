@@ -1,4 +1,4 @@
-import { exportReducer } from '../app/app-utils/reducerUtils'
+import { exportReducer } from '../app-utils/reducerUtils'
 
 const actionHandlers = {}
 

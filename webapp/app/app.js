@@ -5,7 +5,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router'
 
 import SearchView from '../search/searchView'
-import EditJobView from '../job/editJobView'
+import EditJobView from '../job/edit/editJobView'
 
 const App = () => {
 

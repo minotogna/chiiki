@@ -1,5 +1,5 @@
 import React from 'react'
-import PageTemplate from '../app-components/pageTemplate'
+import PageTemplate from '../../app-components/pageTemplate'
 
 import formFields from './editJobFormFields'
 

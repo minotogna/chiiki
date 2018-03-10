@@ -1,6 +1,6 @@
 import React from 'react'
 
-import DateRangePicker from '../app-components/form/dateRangePicker'
+import DateRangePicker from '../../app-components/form/dateRangePicker'
 
 export const EditJobTextInputRow = ({field, label, placeholder}) =>
   <div className="form-group row mb-md-4">
