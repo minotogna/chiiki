@@ -19,6 +19,13 @@ const jobProperties = [
   },
   {
     type: 'text',
+    field: 'companyWebsite',
+    label: 'Company website',
+    placeholder: 'http://....',
+    validators: [validationRequired]
+  },
+  {
+    type: 'text',
     field: 'title',
     label: 'Job title',
     placeholder: 'Job title',
