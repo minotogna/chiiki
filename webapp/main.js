@@ -1,5 +1,7 @@
 import './app-styles/app-style.scss'
 
+import 'babel-polyfill'
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 

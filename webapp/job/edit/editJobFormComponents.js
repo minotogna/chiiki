@@ -14,6 +14,11 @@ export const EditJobTextInputRow = ({job, field, label, placeholder, onChange, v
              value={job[field] ? job[field] : ''}
              onChange={e => onChange(field, e.target.value)}
       />
+      {
+        validation.valid
+          ? null
+          : <div className="invalid-feedback">{validation.error}</div>
+      }
     </div>
   </div>
 
@@ -29,6 +34,7 @@ export const EditJobTextAreaInputRow = ({job, field, label, placeholder, rows = 
                 value={job[field] ? job[field] : ''}
                 onChange={e => onChange(field, e.target.value)}
       ></textarea>
+
     </div>
   </div>
 

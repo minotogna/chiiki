@@ -1,5 +1,5 @@
 const express = require('express')
-const {errorResponse} = require('../requestHelpers')
+const {responseErr} = require('../utils/requestUtils')
 const R = require('ramda')
 
 const noLoginRequiredPaths = [
@@ -47,7 +47,7 @@ module.exports.init = app => {
         loginPage(req, res, next)
       }
     } catch (err) {
-      errorResponse(res, err)
+      responseErr(res, err)
     }
   })
 

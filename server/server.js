@@ -3,10 +3,11 @@ require('dotenv').config()
 const path = require('path')
 const sessionInitializer = require('./sessionInitializer')
 const loginHandler = require('./auth/loginHandler')
-const userApi = require('./user/userApi')
 const authenticator = require('./auth/authenticator')
 const headerMiddleware = require('./headerMiddleware')
 const runMigrations = require('./migration/migrationRunner')
+
+const apiRouter = require('./api/apiRouter')
 
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -17,11 +18,12 @@ const app = express()
 runMigrations()
 
 // app initializations
+app.use(bodyParser.json({limit: '5000kb'}))
+
 headerMiddleware.init(app)
 sessionInitializer.init(app)
 // authenticator.init(app)
 loginHandler.init(app)
-userApi.init(app)
 
 app.use(compression({threshold: 512}))
 
@@ -32,7 +34,8 @@ app.use('/img/', express.static(`${__dirname}/../web-resources/img`))
 app.use('/css/', express.static(`${__dirname}/../web-resources/css`))
 app.use('/webfonts/', express.static(`${__dirname}/../web-resources/webfonts`))
 
-app.use(bodyParser.json({limit: '5000kb'}))
+// initializing api router
+app.use('/api', apiRouter.router)
 
 const httpServerPort = process.env.PORT || '8080'
 app.listen(httpServerPort, () => {

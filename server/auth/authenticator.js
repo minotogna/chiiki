@@ -2,8 +2,8 @@ const passport = require('passport')
 const R = require('ramda')
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
 const cookieParser = require('cookie-parser')
-const userRepository = require('../user/userRepository')
-const {okResponse} = require('../requestHelpers')
+const userRepository = require('../api/user/userRepository')
+const {responseOk} = require('../utils/requestUtils')
 
 
 const verifyCallback = async (req, accessToken, refreshToken, profile, done) => {
@@ -81,7 +81,7 @@ module.exports.init = app => {
 
   app.post('/auth/logout', (req, res) => {
     req.logout()
-    okResponse(res)
+    responseOk(res)
   })
 
 }

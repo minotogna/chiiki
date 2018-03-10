@@ -1,5 +1,3 @@
-// Mostly copied from an example here: https://github.com/brianc/node-postgres
-
 const pgp = require('pg-promise')({})
 
 const config = process.env.DATABASE_URL

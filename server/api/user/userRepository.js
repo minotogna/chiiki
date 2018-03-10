@@ -1,5 +1,5 @@
 const camelize = require('camelize')
-const db = require('../db/db')
+const db = require('../../db/db')
 
 const findUserByLogin = async login =>
   db.query(

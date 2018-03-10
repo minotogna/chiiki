@@ -9,9 +9,9 @@ const addValidationStatus = (validation, prop, valid, error) => valid
 
 const validationRequired = (job, prop, validation) => {
   const value = job[prop.field]
-  const valid = !(R.isNil(value) || R.isEmpty(value))
+  const valid = !(R.isNil(value) || R.isEmpty(R.trim(value)))
 
-  return addValidationStatus(validation, prop, valid, 'missinRequired')
+  return addValidationStatus(validation, prop, valid, 'missingRequired')
 }
 
 module.exports = {
