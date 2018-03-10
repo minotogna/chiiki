@@ -20,7 +20,8 @@ const persistJob = async job => {
 const listJobs = async () => {
   return await map(`
     SELECT id, ${toUTCSelectParam('added_time')}, data 
-    FROM job`,
+    FROM job
+    ORDER BY added_time DESC`,
     [],
     job => ({
       id: job.id,

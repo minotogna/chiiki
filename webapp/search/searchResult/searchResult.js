@@ -30,7 +30,7 @@ const JobCard = ({job}) => <div className="card px-3 py-4 mb-3 row-hover pos-rel
       </h4>
       <p className="text-muted mb-2 text-sm">
         @ <a href="#" className="font-weight-bold text-muted">{job.companyName}</a>
-        (Senior level, {job.employmentStatus})
+        {'\xA0'}(Senior level, {job.employmentStatus})
       </p>
       <p className="text-muted mb-2 text-sm">
         <span className="d-block d-md-inline">
@@ -71,7 +71,7 @@ const JobList = ({jobs}) => {
       <div>
         <hr className="hr-lg mt-0 mb-2 w-10 ml-0 hr-primary"/>
         <h3 className="mb-3 font-weight-bold text-uppercase">
-          TODO: Today <span className="text-xs text-muted font-weight-normal text-normalcase op-7">Feb 3rd 2017</span>
+          TODO Group jobs by date or?: Today <span className="text-xs text-muted font-weight-normal text-normalcase op-7">Feb 3rd 2017</span>
         </h3>
         {jobs.map((job, i) =>
           <JobCard key={i} job={job}/>
