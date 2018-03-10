@@ -72,8 +72,8 @@ class EditJobView extends React.Component {
                 validation && !validation.valid
                   ? <div className="row mt-md-1 mb-md-1 justify-content-center">
                     <div className="col text-center">
-                      <div className="text-danger font-weight-bold">There are errors in the form, please fix them before
-                        proceeding
+                      <div className="text-danger font-weight-bold">
+                        There are errors in the form, please fix them before proceeding
                       </div>
                     </div>
                   </div>
