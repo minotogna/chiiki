@@ -1,23 +1,28 @@
 const {employmentStatuses, jobSectors, qualificationRequirements} = require('./jobPropertyOptions')
 
+const {validationRequired} = require('./jobValidatorFunctions')
+
 const jobProperties = [
   {
     type: 'text',
     field: 'companyName',
     label: 'Company name',
     placeholder: 'Name',
+    validators: [validationRequired]
   },
   {
     type: 'text',
     field: 'companyEmail',
     label: 'Company email',
     placeholder: 'Email',
+    validators: [validationRequired]
   },
   {
     type: 'text',
     field: 'title',
     label: 'Job title',
     placeholder: 'Job title',
+    validators: [validationRequired]
   },
   {
     type: 'applicationPeriod',
@@ -145,9 +150,8 @@ const jobProperties = [
     label: 'Representative message',
     placeholder: 'Representative message',
     rows: 2,
-  },
+  }
 
 ]
 
-
-export default jobProperties
+module.exports = jobProperties

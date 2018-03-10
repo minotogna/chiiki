@@ -2,29 +2,37 @@ import React from 'react'
 
 import DateRangePicker from '../../app-components/form/dateRangePicker'
 
-export const EditJobTextInputRow = ({field, label, placeholder}) =>
+export const EditJobTextInputRow = ({job, field, label, placeholder, onChange, validation}) =>
   <div className="form-group row mb-md-4">
     <label htmlFor={field}
            className="col-sm-2 col-form-label text-md-right">{label}</label>
     <div className="col">
       <input type="text"
-             className="form-control"
+             className={`form-control${validation.valid ? '' : ' is-invalid'}`}
              id={field}
-             placeholder={placeholder}/>
+             placeholder={placeholder}
+             value={job[field] ? job[field] : ''}
+             onChange={e => onChange(field, e.target.value)}
+      />
     </div>
   </div>
 
-export const EditJobTextAreaInputRow = ({field, label, placeholder, rows = 4}) =>
+export const EditJobTextAreaInputRow = ({job, field, label, placeholder, rows = 4, onChange}) =>
   <div className="form-group row mb-md-4">
     <label htmlFor={field}
            className="col-sm-2 col-form-label text-md-right">{label}</label>
     <div className="col">
-      <textarea className="form-control" id={field} rows={rows}
-                placeholder={placeholder}></textarea>
+      <textarea className="form-control"
+                id={field}
+                rows={rows}
+                placeholder={placeholder}
+                value={job[field] ? job[field] : ''}
+                onChange={e => onChange(field, e.target.value)}
+      ></textarea>
     </div>
   </div>
 
-export const EditJobSelectInputRow = ({field, label, placeholder = 'Select', options = []}) =>
+export const EditJobSelectInputRow = ({job, field, label, placeholder = 'Select', options = [], onChange}) =>
   <div className="form-group row mb-md-4">
     <label htmlFor={field}
            className="col-sm-2 col-form-label text-md-right">{label}</label>
@@ -40,7 +48,7 @@ export const EditJobSelectInputRow = ({field, label, placeholder = 'Select', opt
     </div>
   </div>
 
-export const EditJobBooleanInputRow = ({field, label}) =>
+export const EditJobBooleanInputRow = ({job, field, label, onChange}) =>
   <div className="form-group row mb-md-4">
     <label
       className="col-sm-2 col-form-label text-md-right">{label}</label>
@@ -62,7 +70,7 @@ export const EditJobBooleanInputRow = ({field, label}) =>
     </div>
   </div>
 
-export const ApplicationPeriod = ({field, label}) =>
+export const ApplicationPeriod = ({job, field, label, onChange}) =>
   <div className="form-group row mb-md-4">
     <label className="col-sm-2 col-form-label text-md-right">
       {label}

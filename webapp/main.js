@@ -25,7 +25,7 @@ function renderApp () {
       </BrowserRouter>
     </Provider>
     ,
-    document.getElementById('main'),
+    document.getElementById('main')
   )
 
 }

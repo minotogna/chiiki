@@ -1,4 +1,5 @@
 import React from 'react'
+import * as R from 'ramda'
 
 import {
   EditJobTextInputRow,
@@ -20,7 +21,7 @@ const inputTypeComponentsMapping = {
 
 const formFields = jobProperties.map(jobProperty => ({
   component: inputTypeComponentsMapping[jobProperty.type],
-  props: {...jobProperty},
+  props: {...R.dissoc('validators', jobProperty)},
 }))
 
 export default formFields
