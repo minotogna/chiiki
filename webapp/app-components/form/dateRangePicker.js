@@ -9,7 +9,7 @@ import { differenceInMonths, format, parse } from 'date-fns'
 
 const formatDate = date => format(date, 'YYYY-MM-DD')
 
-const parseDate = date => parse(date)
+const parseDate = date => console.log(date) || parse(date)
 
 class DateRangePicker extends React.Component {
 
@@ -50,10 +50,25 @@ class DateRangePicker extends React.Component {
         this.focusTo()
       }
     })
+    this.handleChange(this.props.onFromChange, from)
   }
 
   handleToChange (to) {
     this.setState({to}, this.showFromMonth)
+    this.handleChange(this.props.onToChange, to)
+  }
+
+  handleChange (fn, value) {
+    if (fn)
+      fn(parse(value).toISOString())
+  }
+
+  componentWillReceiveProps (nextProps) {
+    const {from, to} = nextProps
+    this.setState({
+      from: from ? parse(from) : undefined,
+      to: to ? parse(to) : undefined
+    })
   }
 
   render () {
@@ -64,7 +79,7 @@ class DateRangePicker extends React.Component {
       <DayPickerInput
         value={from}
         placeholder="From"
-        format="LL"
+        format="UTC"
         formatDate={formatDate}
         parseDate={parseDate}
         dayPickerProps={{
@@ -82,7 +97,7 @@ class DateRangePicker extends React.Component {
             ref={el => (this.to = el)}
             value={to}
             placeholder="To"
-            format="LL"
+            format="UTC"
             formatDate={formatDate}
             parseDate={parseDate}
             dayPickerProps={{

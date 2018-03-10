@@ -43,9 +43,11 @@ export const EditJobSelectInputRow = ({job, field, label, placeholder = 'Select'
     <label htmlFor={field}
            className="col-sm-2 col-form-label text-md-right">{label}</label>
     <div className="col">
-      <select className="form-control" id={field} value={'option-disabled'}
-              onChange={() => {}}>
-        <option disabled={true} value={'option-disabled'}>{placeholder}</option>
+      <select className="form-control"
+              id={field}
+              value={job[field] ? job[field] : 'option-placeholder'}
+              onChange={e => onChange(field, e.target.value)}>
+        <option disabled={true} value={'option-placeholder'}>{placeholder}</option>
         {
           options.map(option => <option key={option.key}
                                         value={option.key}>{option.label}</option>)
@@ -62,13 +64,23 @@ export const EditJobBooleanInputRow = ({job, field, label, onChange}) =>
 
       <div className="form-check-inline">
         <label className="form-check-label">
-          <input type="radio" className="form-check-input" value="true"/>
+          <input type="radio"
+                 className="form-check-input"
+                 value="true"
+                 name={field}
+                 checked={!!(job[field] && job[field] === 'true')}
+                 onChange={e => onChange(field, e.target.value)}/>
           Yes
         </label>
       </div>
       <div className="form-check-inline">
         <label className="form-check-label">
-          <input type="radio" className="form-check-input" value="false"/>
+          <input type="radio"
+                 className="form-check-input"
+                 value="false"
+                 name={field}
+                 checked={!!(job[field] && job[field] === 'false')}
+                 onChange={e => onChange(field, e.target.value)}/>
           No
         </label>
       </div>
@@ -76,12 +88,21 @@ export const EditJobBooleanInputRow = ({job, field, label, onChange}) =>
     </div>
   </div>
 
-export const ApplicationPeriod = ({job, field, label, onChange}) =>
-  <div className="form-group row mb-md-4">
+export const ApplicationPeriod = ({job, field, label, onChange}) => {
+  const fromField = `${field}From`
+  const toField = `${field}To`
+
+  return <div className="form-group row mb-md-4">
     <label className="col-sm-2 col-form-label text-md-right">
       {label}
     </label>
     <div className="col">
-      <DateRangePicker/>
+      <DateRangePicker
+        from={job[fromField]}
+        to={job[toField]}
+        onFromChange={value => onChange(fromField, value)}
+        onToChange={value => onChange(toField, value)}
+      />
     </div>
   </div>
+}

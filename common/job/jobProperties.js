@@ -22,7 +22,7 @@ const jobProperties = [
     field: 'companyWebsite',
     label: 'Company website',
     placeholder: 'http://....',
-    validators: [validationRequired]
+
   },
   {
     type: 'text',

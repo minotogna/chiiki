@@ -29,7 +29,7 @@ class EditJobView extends React.Component {
     const {job} = this.state
     const {validation, postJob} = this.props
 
-    const onChangeDefault = (prop, value) => {
+    const onChange = (prop, value) => {
       this.setState({job: R.assoc(prop, value, job)})
     }
 
@@ -60,7 +60,7 @@ class EditJobView extends React.Component {
                     {
                       key: i,
                       job: job,
-                      onChange: onChangeDefault,
+                      onChange: onChange,
                       validation: this.fieldValidation(formField.props.field),
                       ...formField.props
                     },
