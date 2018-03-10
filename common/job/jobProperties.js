@@ -73,6 +73,11 @@ const jobProperties = [
     label: 'Part time allowed',
   },
   {
+    type: 'boolean',
+    field: 'remoteAllowed',
+    label: 'Remote allowed',
+  },
+  {
     type: 'text',
     field: 'location',
     label: 'Activity location',

@@ -24,8 +24,8 @@ export const postJob = job => async dispatch => {
 
 export const listJobs = () => async dispatch => {
   try {
-    const jobs = await axios.get('/api/jobs')
-    dispatch({type: jobListLoaded, jobs})
+    const resp = await axios.get('/api/jobs')
+    dispatch({type: jobListLoaded, jobs: resp.data})
   } catch (err) {
     alert('An error occurred ' + err)
   }
