@@ -1,6 +1,4 @@
-import React from 'react'
-
-export const jobSectors = [
+const jobSectors = [
   {key: 'accountancy', label: 'Accountancy, banking and finance'},
   {key: 'business', label: 'Business, consulting and management'},
   {key: 'charityVoluntary', label: 'Charity and voluntary work'},
@@ -11,16 +9,22 @@ export const jobSectors = [
   {key: 'it', label: 'IT'},
 ]
 
-export const employmentStatuses = [
+const employmentStatuses = [
   {key: 'permanent', label: 'Permanent'},
   {key: 'contract', label: 'Contract'},
   {key: 'internship', label: 'Internship'},
   {key: 'partner', label: 'Partner'},
 ]
 
-export const qualificationRequirements = [
+const qualificationRequirements = [
   {key: 'highSchool', label: 'High school'},
   {key: 'university3years', label: 'University 3 years'},
   {key: 'university5years', label: 'University 5 years'},
   {key: 'phd', label: 'Phd'},
 ]
+
+module.exports = {
+  jobSectors,
+  employmentStatuses,
+  qualificationRequirements,
+}
