@@ -12,7 +12,7 @@ const FeaturedJobs = ({jobs}) =>{
     <div className="row text-left">
 
       <div className="col-lg-4 d-lg-flex mb-3">
-        <div className="px-3 pb-3 pt-5 overlay overlay-gradient-flip overlay-op-8 rounded flex-fullwitdh"
+        <div className="px-3 pb-3 pt-5 overlay rounded flex-fullwitdh"
              data-bg-img="assets/img/homes/code.jpg">
           <h2 className="text-white text-uppercase font-weight-bold mb-0 display-4">
             <span data-toggle="count-to" data-to="238" data-from="0">0</span>
@@ -23,7 +23,7 @@ const FeaturedJobs = ({jobs}) =>{
       </div>
 
       <div className="col-lg-4 d-lg-flex mb-3">
-        <div className="px-3 pb-3 pt-5 overlay overlay-gradient-flip overlay-op-8 rounded flex-fullwitdh"
+        <div className="px-3 pb-3 pt-5 overlay rounded flex-fullwitdh"
              data-bg-img="assets/img/homes/desk.jpg">
           <h2 className="text-white text-uppercase font-weight-bold mb-0 display-4">
             <span data-toggle="count-to" data-to="538" data-from="0">0</span>
@@ -34,7 +34,7 @@ const FeaturedJobs = ({jobs}) =>{
       </div>
 
       <div className="col-lg-4 d-lg-flex mb-3">
-        <div className="px-3 pb-3 pt-5 overlay overlay-gradient-flip overlay-op-8 rounded flex-fullwitdh"
+        <div className="px-3 pb-3 pt-5 overlay rounded flex-fullwitdh"
              data-bg-img="assets/img/homes/happy.jpg">
           <h2 className="text-white text-uppercase font-weight-bold mb-0 display-4">
             <span data-toggle="count-to" data-to="138" data-from="0">0</span>

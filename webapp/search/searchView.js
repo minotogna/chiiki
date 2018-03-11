@@ -17,7 +17,7 @@ class SearchView extends React.Component {
     return <PageTemplate>
       <div className="h-100">
         <div
-          className="bg-white overlay overlay-gradient-flip overlay-op-8 text-center text-lg-left py-5 py-lg-10 d-flex flex-column justify-content-center search__bg">
+          className="bg-white overlay text-center text-lg-left py-5 py-lg-10 d-flex flex-column justify-content-center search__bg">
           <div className="container pt-5 mt-5">
             <h2 className="display-4 text-light mb-3">
               Find your <span className="font-weight-bold">dream job!</span>

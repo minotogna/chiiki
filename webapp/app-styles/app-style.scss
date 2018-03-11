@@ -4,8 +4,6 @@
 @import "fontawsome-scss/fa-solid";
 @import "fontawsome-scss/fa-regular";
 @import "fontawsome-scss/fa-brands";
-@import "./theme-scss/init";
-@import "./theme-scss/core/overlay";
 
 $sizes: (
         auto: auto,
@@ -148,4 +146,29 @@ hr.hr-lg {
 // ============= hover
 .hover-light:hover {
   background-color: $light;
+}
+
+// ============= overlay
+.overlay {
+  position: relative;
+  > * {
+    z-index: 4;
+    position: relative;
+  }
+}
+
+.overlay:after {
+  opacity: 0.8;
+  background: transparent;
+  background-image: linear-gradient(to bottom, $dark2 0%, transparent 100%);
+  background-repeat: repeat-x;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  display: block !important;
 }
