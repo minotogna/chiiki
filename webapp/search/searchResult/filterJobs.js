@@ -2,28 +2,28 @@ import React from 'react'
 
 const FilterJobs = ({jobs}) => {
   return <div className="col-lg-3 order-lg-2 mb-4 mb-lg-0">
-    <div data-toggle="sticky"
-         data-settings='{"parent":"#content","mind":"#header", "top":10, "breakpoint":992}'>
+    <div>
 
-      <hr className="hr-lg mt-0 mb-2 w-10 ml-0 hr-primary"/>
-      <h3 className="text-uppercase mb-3">
+      <hr className="hr-lg mt-0 mb-2 w-10 ml-0 border-primary"/>
+      <h4 className="text-uppercase mb-3 font-weight-bold">
         Filter Jobs
-      </h3>
+      </h4>
 
       <div className="p-3 bg-light">
-        <h4>
+        <h5 className="font-weight-bold">
           Location
-        </h4>
+        </h5>
         <div className="pos-relative">
-          <i className="fa fa-map-marker-alt icon-1x pos-absolute pos-l mt-1"></i>
-          <input className="form-control form-control-transparent pl-4" type="text"
+          <i className="fa fa-map-marker-alt position-absolute mt-1"
+             style={{fontSize:'1.4rem'}}/>
+          <input className="form-control border-0 bg-transparent noshadow pl-4" type="text"
                  placeholder="Location ie. London"/>
           <hr className="mt-1 mb-0"/>
         </div>
 
-        <h4 className="mt-3">
+        <h5 className="mt-3 font-weight-bold">
           Remote OK
-        </h4>
+        </h5>
         <div className="form-check">
           <label className="form-check-label">
             <input className="form-check-input" type="checkbox" value=""/>
@@ -32,9 +32,9 @@ const FilterJobs = ({jobs}) => {
         </div>
 
         <hr className="my-3"/>
-        <h4>
+        <h5 className="font-weight-bold">
           Job Type
-        </h4>
+        </h5>
         <div className="checkboxes">
           <div className="form-check">
             <label className="form-check-label">

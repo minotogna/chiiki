@@ -61,8 +61,8 @@ class EditJobView extends React.Component {
               {/*header*/}
               <div className="row justify-content-center">
                 <div className="col-md-6">
-                  <hr className="hr-lg mt-1 mb-2 w-20 ml-0 hr-primary"/>
-                  <h3 className="text-left text-uppercase mt-0 mb-4">
+                  <hr className="hr-lg mt-1 mb-2 w-20 ml-0 border-primary"/>
+                  <h3 className="text-left text-uppercase font-weight-bold mt-0 mb-4">
                     Post a new job opportunity
                   </h3>
                 </div>

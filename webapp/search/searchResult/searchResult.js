@@ -11,17 +11,19 @@ import Velocity from 'velocity-react/lib/velocity-animate-shim'
 
 const EmptyList = () => <div className="row">
   <div className="col">
-    <hr className="hr-lg mt-0 mb-2 w-10 ml-0 hr-primary"/>
+    <hr className="hr-lg mt-0 mb-2 w-10 ml-0 border-primary"/>
     <h3 className="mb-3 font-weight-bold text-uppercase">
       We couldn't find any jobs! Please, try a different search..
     </h3>
   </div>
 </div>
 
-const JobCard = ({job}) => <div className="card px-3 py-4 mb-3 row-hover pos-relative">
+const JobCard = ({job}) => <div className="card px-3 py-4 mb-3 row-hover position-relative border-primary hover-light">
   <div className="row align-items-center ">
-    <span className="pos-absolute pos-t pos-l bg-primary text-white text-xs px-1">featured</span>
-    <Link to={`/app/jobs/job/${job.id}`} className="btn ">Edit Job(temp-link)</Link>
+    <span className="absolute-top-left">
+    <span className="absolute-top-left bg-primary text-white text-xs px-1">featured</span>
+    <Link to={`/app/jobs/job/${job.id}`} className="btn text-xs mt-3">Edit Job(temp-link)</Link>
+    </span>
     <div className="col-md-2">
       <img src="assets/img/customers/customer-1.png" alt="COMPANY"
            className="img-fluid d-none d-md-block"/>
@@ -71,7 +73,7 @@ const JobList = ({jobs}) => {
 
       {/*======= JOB GROUP*/}
       <div>
-        <hr className="hr-lg mt-0 mb-2 w-10 ml-0 hr-primary"/>
+        <hr className="hr-lg mt-0 mb-2 w-10 ml-0 border-primary"/>
         <h3 className="mb-3 font-weight-bold text-uppercase">
           TODO Group jobs by date or?: Today <span className="text-xs text-muted font-weight-normal text-normalcase op-7">Feb 3rd 2017</span>
         </h3>
@@ -109,7 +111,7 @@ const JobList = ({jobs}) => {
 
         <div className="card px-3 py-4 mb-3 row-hover card-outline-primary pos-relative">
           <div className="row align-items-center ">
-            <span className="pos-absolute pos-t pos-l bg-primary text-white text-xs px-1">featured</span>
+            <span className="absolute-top-left bg-primary text-white text-xs px-1">featured</span>
             <div className="col-md-2">
               <img src="assets/img/customers/customer-2.png" alt="TSU" className="img-fluid d-none d-md-block"/>
             </div>

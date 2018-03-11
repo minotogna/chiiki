@@ -1,25 +1,32 @@
-//@import "~bootstrap/scss/mixins/breakpoints";
-
-#header {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 1000;
-}
+@import "../app-styles/variables";
 
 .header {
-  padding: 15px 0;
-  border-bottom: 1px solid rgba(#b771b0, .3);
+  //padding: 15px 0;
+  font-family: "Rambla", sans-serif;
+  border-bottom: 1px solid rgba($primary, .3);
+  background-color: $dark;
 }
 
-//@include media-breakpoint-up(sm) {
-//  .header{
-//    padding: 20px 0;
-//  }
-//}
-.header-inner {
-  display: flex;
+.header-divider {
+  width: 20px;
+  text-align: center;
+  line-height: 1;
+  height: 40px;
+  position: relative;
+  display: block;
+}
+
+.header-divider:after {
+  content: '';
+  width: 1px;
+  height: 100%;
+  background: $light;
+  display: inline-block;
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
 }
 
 .header-transparent {
@@ -31,4 +38,8 @@
 .navbar .navbar-nav > .nav-item > .nav-link:hover,
 .navbar .navbar-nav > .nav-item > .nav-link:focus {
   color: lighten(grey, 20%);
+}
+
+a.brand-link {
+  text-decoration: none;
 }

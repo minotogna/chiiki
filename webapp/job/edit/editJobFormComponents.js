@@ -5,8 +5,8 @@ import DateRangePicker from '../../app-components/form/dateRangePicker'
 export const EditJobTextInputRow = ({job, field, label, placeholder, onChange, validation}) =>
   <div className="form-group row mb-md-4">
     <label htmlFor={field}
-           className="col-sm-2 col-form-label text-md-right">{label}</label>
-    <div className="col">
+           className="col-sm-2 col-form-label d-flex align-items-center">{label}</label>
+    <div className="col d-flex align-items-center">
       <input type="text"
              className={`form-control${validation.valid ? '' : ' is-invalid'}`}
              id={field}
@@ -25,8 +25,8 @@ export const EditJobTextInputRow = ({job, field, label, placeholder, onChange, v
 export const EditJobTextAreaInputRow = ({job, field, label, placeholder, rows = 4, onChange}) =>
   <div className="form-group row mb-md-4">
     <label htmlFor={field}
-           className="col-sm-2 col-form-label text-md-right">{label}</label>
-    <div className="col">
+           className="col-sm-2 col-form-label d-flex align-items-center">{label}</label>
+    <div className="col d-flex align-items-center">
       <textarea className="form-control"
                 id={field}
                 rows={rows}
@@ -41,8 +41,8 @@ export const EditJobTextAreaInputRow = ({job, field, label, placeholder, rows = 
 export const EditJobSelectInputRow = ({job, field, label, placeholder = 'Select', options = [], onChange}) =>
   <div className="form-group row mb-md-4">
     <label htmlFor={field}
-           className="col-sm-2 col-form-label text-md-right">{label}</label>
-    <div className="col">
+           className="col-sm-2 col-form-label d-flex align-items-center">{label}</label>
+    <div className="col d-flex align-items-center">
       <select className="form-control"
               id={field}
               value={job[field] ? job[field] : 'option-placeholder'}
@@ -59,8 +59,8 @@ export const EditJobSelectInputRow = ({job, field, label, placeholder = 'Select'
 export const EditJobBooleanInputRow = ({job, field, label, onChange}) =>
   <div className="form-group row mb-md-4">
     <label
-      className="col-sm-2 col-form-label text-md-right">{label}</label>
-    <div className="col">
+      className="col-sm-2 col-form-label d-flex align-items-center">{label}</label>
+    <div className="col d-flex align-items-center">
 
       <div className="form-check-inline">
         <label className="form-check-label">
@@ -93,10 +93,10 @@ export const ApplicationPeriod = ({job, field, label, onChange}) => {
   const toField = `${field}To`
 
   return <div className="form-group row mb-md-4">
-    <label className="col-sm-2 col-form-label text-md-right">
+    <label className="col-sm-2 col-form-label d-flex align-items-center">
       {label}
     </label>
-    <div className="col">
+    <div className="col d-flex align-items-center">
       <DateRangePicker
         from={job[fromField]}
         to={job[toField]}

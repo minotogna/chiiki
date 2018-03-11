@@ -5,39 +5,29 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
-  return <div id="header">
-
-    <div className="header">
-      <div className="header-inner container">
-        <div className="header-brand">
-          <Link to="/" className="header-brand-text header-brand-text-sm"
+  return   <div className="header py-1 py-lg-3 fixed-top text-light">
+      <div className="header-inner d-flex justify-content-between container">
+        <div className="header-brand d-flex align-items-center">
+          <Link to="/" className="brand-link text-primary font-weight-bold"
                 title="Home">
-            <h1>
-              <span className="header-brand-text-alt">Chii</span>ki<span
-              className="header-brand-text-alt">.</span>
-            </h1>
+            <h3 className="m-0">
+              <span className="text-light">Chii</span>ki
+              <span className="text-light">.</span>
+            </h3>
           </Link>
           <div className="header-divider d-none d-lg-block"></div>
-          <div className="header-slogan text-sm d-none d-lg-block">
+          <div className="text-sm d-none d-lg-block">
             Something here?
           </div>
         </div>
-        <div className="header-block order-12">
 
-          <a href="#top"
-             className="btn btn-link btn-icon text-white op-6 header-btn float-right d-lg-none"
-             data-toggle="jpanel-menu" data-target=".navbar-main"
-             data-direction="right">
-            <i className="fa fa-bars"></i>
-          </a>
-        </div>
 
         <div className="navbar navbar-expand-md">
-          <div className="navbar-main collapse">
+          <div className="navbar-main">
             <ul
-              className="nav navbar-nav mr-lg-2 dropdown-effect-fade">
+              className="nav navbar-nav mr-1 mr-md-2 mr-lg-3  dropdown-effect-fade">
               <li className="nav-item d-lg-flex">
-                <Link to="/" className="nav-link">
+                <Link to="/" className="text-light">
                   <i className="fas fa-home nav-link-icon"></i>
                   <span className="d-none">Home</span>
                 </Link>
@@ -62,9 +52,20 @@ const Header = () => {
             Post Job
           </Link>
         </div>
+
+      {/*<div className="header-block order-12 d-lg-none">*/}
+      <div className="header-block order-12 d-none">
+
+        <a href="#top"
+           className="btn btn-link btn-icon text-white op-6 header-btn float-right"
+           data-toggle="jpanel-menu" data-target=".navbar-main"
+           data-direction="right">
+          <i className="fa fa-bars"></i>
+        </a>
+      </div>
+
       </div>
     </div>
-  </div>
 }
 
 export default Header

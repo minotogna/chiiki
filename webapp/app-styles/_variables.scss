@@ -1,3 +1,5 @@
+// dark #292b2c
+
 // colors
 $text-color: #495057;
 $border-color: #ced4da;
@@ -5,5 +7,33 @@ $border-color: #ced4da;
 $color-primary: #b771b0 !default;
 $color-danger: #dc3545 !default;
 
-
 $border-thin: 1px solid $border-color;
+
+// bootstrap variables
+$blue: #00ADBB;
+$indigo: #6610f2;
+$purple: #b771b0;
+$pink: #cca1a7;
+$red: #BE3E1D;
+$orange: #e67e22;
+$yellow: #D4AC0D;
+$green: #55A79A;
+$teal: #008080;
+$cyan: #008b8b;
+
+$primary: $purple;
+//$secondary:     $gray-600 !default;
+//$success:       $green !default;
+//$info:          $cyan !default;
+//$warning:       $yellow !default;
+$danger: #dc3545;
+$light: #f0f0f0;
+$light: #f8f9fa;
+//$dark: #292b2c;
+$dark: #343a40;
+$dark2: #292b2c;
+
+
+$border-radius:               1px;
+$border-radius-lg:            2px ;
+$border-radius-sm:            .8px;
