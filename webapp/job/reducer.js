@@ -10,8 +10,10 @@ import {
 
 const actionHandlers = {
 
-  [jobEditJobLoaded]: (state, action) =>
-    R.assocPath(['edit', 'job'], action.job, state),
+  [jobEditJobLoaded]: (state, action) => R.pipe(
+    R.assocPath(['edit', 'job'], action.job),
+    R.dissocPath(['edit', 'validation'])
+  )(state),
 
   [jobEditValidationUpdated]: (state, action) =>
     R.assocPath(['edit', 'validation'], action.validation, state),
