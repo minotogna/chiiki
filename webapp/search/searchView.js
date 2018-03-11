@@ -74,7 +74,7 @@ class SearchView extends React.Component {
   }
 }
 
-const mapStateToProps = state => console.log(state) || ({
+const mapStateToProps = state => ({
   jobs: R.path(['job', 'list', 'all'], state)
 })
 

@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {Link} from 'react-router-dom'
 import * as R from 'ramda'
 
 import FeaturedJobs from './featuredJobs'
 import FilterJobs from './filterJobs'
 
-import 'velocity-react'
+//import 'velocity-react'
 import Velocity from 'velocity-react/lib/velocity-animate-shim'
 
 const EmptyList = () => <div className="row">
@@ -20,6 +21,7 @@ const EmptyList = () => <div className="row">
 const JobCard = ({job}) => <div className="card px-3 py-4 mb-3 row-hover pos-relative">
   <div className="row align-items-center ">
     <span className="pos-absolute pos-t pos-l bg-primary text-white text-xs px-1">featured</span>
+    <Link to={`/app/jobs/job/${job.id}`} className="btn ">Edit Job(temp-link)</Link>
     <div className="col-md-2">
       <img src="assets/img/customers/customer-1.png" alt="COMPANY"
            className="img-fluid d-none d-md-block"/>
@@ -73,6 +75,7 @@ const JobList = ({jobs}) => {
         <h3 className="mb-3 font-weight-bold text-uppercase">
           TODO Group jobs by date or?: Today <span className="text-xs text-muted font-weight-normal text-normalcase op-7">Feb 3rd 2017</span>
         </h3>
+
         {jobs.map((job, i) =>
           <JobCard key={i} job={job}/>
         )}

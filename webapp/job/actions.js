@@ -3,6 +3,7 @@ import axios from 'axios'
 import { validateJob } from '../../common/job/jobValidator'
 
 export const jobListLoaded = 'job/list/loaded'
+export const jobEditJobLoaded = 'job/edit/loaded'
 export const jobEditValidationUpdated = 'job/edit/ValidationUpdated'
 
 export const postJob = job => async dispatch => {
@@ -26,6 +27,15 @@ export const listJobs = () => async dispatch => {
   try {
     const resp = await axios.get('/api/jobs')
     dispatch({type: jobListLoaded, jobs: resp.data})
+  } catch (err) {
+    alert('An error occurred ' + err)
+  }
+}
+
+export const findJob = (id) => async dispatch => {
+  try {
+    const resp = await axios.get(`/api/jobs/job/${id}`)
+    dispatch({type: jobEditJobLoaded, job: resp.data})
   } catch (err) {
     alert('An error occurred ' + err)
   }

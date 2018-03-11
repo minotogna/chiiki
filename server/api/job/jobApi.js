@@ -1,5 +1,6 @@
 const {responseErr} = require('../../utils/requestUtils')
-const {persistJob, listJobs} = require('./jobRepository')
+
+const {persistJob, listJobs, findJob} = require('./jobRepository')
 
 module.exports.init = app => {
 
@@ -13,10 +14,19 @@ module.exports.init = app => {
     }
   })
 
-  //list all jobs
+  //get methods
   app.get('/jobs', async (req, res) => {
     try {
       const jobs = await listJobs()
+      res.send(jobs)
+    } catch (err) {
+      responseErr(res, err)
+    }
+  })
+
+  app.get('/jobs/job/:id', async (req, res) => {
+    try {
+      const jobs = await findJob(req.params.id)
       res.send(jobs)
     } catch (err) {
       responseErr(res, err)

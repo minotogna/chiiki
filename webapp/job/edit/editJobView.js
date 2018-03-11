@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 
 import * as R from 'ramda'
@@ -7,7 +8,7 @@ import PageTemplate from '../../app-components/pageTemplate'
 
 import formFields from './editJobFormFields'
 
-import { postJob } from '../actions'
+import { postJob, findJob } from '../actions'
 
 class EditJobView extends React.Component {
 
@@ -22,6 +23,22 @@ class EditJobView extends React.Component {
       R.prop(fieldName),
       R.defaultTo({valid: true})
     )(this.props.validation)
+  }
+
+  componentWillReceiveProps (nextProps) {
+
+    if (nextProps.job && !this.props.job) {
+      this.setState({job: nextProps.job})
+    }
+  }
+
+  componentWillMount () {
+    if (this.props.jobId)
+      this.props.findJob(this.props.jobId)
+  }
+
+  componentDidMount () {
+    ReactDOM.findDOMNode(this).scrollIntoView()
   }
 
   render () {
@@ -100,11 +117,15 @@ class EditJobView extends React.Component {
 
       </div>
     </PageTemplate>
+
   }
 
 }
 
-const mapStateToProps = state => ({
-  validation: R.path(['job', 'edit', 'validation'], state)
+const mapStateToProps = (state, props) => ({
+  validation: R.path(['job', 'edit', 'validation'], state),
+  job: R.path(['job', 'edit', 'job'], state),
+  jobId: R.path(['match', 'params', 'id'], props)
 })
-export default connect(mapStateToProps, {postJob})(EditJobView)
+
+export default connect(mapStateToProps, {postJob, findJob})(EditJobView)

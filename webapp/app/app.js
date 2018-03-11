@@ -12,7 +12,8 @@ const App = () => {
   return <Switch>
     <Route exact path="/" component={SearchView}/>
     <Route exact path="/index.html" component={SearchView}/>
-    <Route path="/app/jobs/job" component={EditJobView}/>
+    <Route exact path="/app/jobs/job" component={EditJobView}/>
+    <Route exact path="/app/jobs/job/:id" component={EditJobView}/>
 
   </Switch>
 
