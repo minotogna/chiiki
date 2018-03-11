@@ -9,7 +9,7 @@ const prodBuild = process.env.NODE_ENV === 'production'
 const jsBundleName = 'bundle-[hash].js'
 const cssBundleName = 'styles-[hash].css'
 
-const lastCommit = process.env.SOURCE_VERSION || "N/A"
+const lastCommit = process.env.SOURCE_VERSION || 'N/A'
 const versionString = lastCommit + '_' + new Date().toISOString()
 
 const alwaysInUseplugins = [
@@ -18,7 +18,10 @@ const alwaysInUseplugins = [
   new webpack.DefinePlugin(
     {
       __SYSTEM_VERSION__: `"${versionString}"`,
-      __BUST__: `"${uuidv4()}"`
+      __BUST__: `"${uuidv4()}"`,
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      }
     }
   )
 ]
@@ -63,6 +66,7 @@ const webPackConfig = {
   plugins: plugins
 }
 
-webPackConfig.devtool = 'source-map'
+if (prodBuild)
+  webPackConfig.devtool = 'source-map'
 
 module.exports = webPackConfig
