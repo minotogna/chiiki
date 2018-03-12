@@ -66,7 +66,7 @@ const webPackConfig = {
   plugins: plugins
 }
 
-if (prodBuild)
+if (!prodBuild)
   webPackConfig.devtool = 'source-map'
 
 module.exports = webPackConfig

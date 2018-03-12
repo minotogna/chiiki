@@ -3,20 +3,17 @@ import * as R from 'ramda'
 import { exportReducer } from '../app-utils/reducerUtils'
 
 import {
-  jobEditJobLoaded,
-  jobEditValidationUpdated,
+  jobEditJobUpdated,
   jobListLoaded
 } from './actions'
 
 const actionHandlers = {
 
-  [jobEditJobLoaded]: (state, action) => R.pipe(
+  [jobEditJobUpdated]: (state, action) => R.pipe(
     R.assocPath(['edit', 'job'], action.job),
-    R.dissocPath(['edit', 'validation'])
+    R.assocPath(['edit', 'validation'], action.validation)
   )(state),
 
-  [jobEditValidationUpdated]: (state, action) =>
-    R.assocPath(['edit', 'validation'], action.validation, state),
 
   [jobListLoaded]: (state, action) =>
     R.assocPath(['list', 'all'], action.jobs, state)
