@@ -1,8 +1,8 @@
 const i18next = require('i18next')
 const Promise = require('bluebird')
 
-const jpTranslation = require('./resources/jp').translation
-const enTranslation = require('./resources/en').translation
+const jpTranslation = require('./resources/jp')
+const enTranslation = require('./resources/en')
 
 const createParams = lang => ({
   fallbackLng: 'en',

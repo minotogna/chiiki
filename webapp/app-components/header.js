@@ -4,15 +4,14 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 
-const Header = () => {
+const Header = ({i18n}) => {
   return   <div className="header py-1 py-lg-3 fixed-top text-light">
       <div className="header-inner d-flex justify-content-between container">
         <div className="header-brand d-flex align-items-center">
           <Link to="/" className="brand-link text-primary font-weight-bold"
                 title="Home">
             <h3 className="m-0">
-              <span className="text-light">Chii</span>ki
-              <span className="text-light">.</span>
+              <span className="text-light">Chii</span>ki<span className="text-light">.</span>
             </h3>
           </Link>
           <div className="header-divider d-none d-lg-block"></div>
@@ -49,7 +48,7 @@ const Header = () => {
           </div>
           <Link to="/app/jobs/job"
                 className="btn btn-primary btn-rounded btn-sm text-uppercase font-weight-bold">
-            Post Job
+            {i18n.t('header.postJob')}
           </Link>
         </div>
 

@@ -9,7 +9,7 @@ import { differenceInMonths, format, parse } from 'date-fns'
 
 const formatDate = date => format(date, 'YYYY-MM-DD')
 
-const parseDate = date => console.log(date) || parse(date)
+const parseDate = date => parse(date)
 
 class DateRangePicker extends React.Component {
 

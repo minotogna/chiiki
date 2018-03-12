@@ -12,9 +12,9 @@ import SearchResult from './searchResult/searchResult'
 class SearchView extends React.Component {
 
   render () {
-    const {listJobs, jobs} = this.props
+    const {listJobs, jobs, i18n} = this.props
 
-    return <PageTemplate>
+    return <PageTemplate i18n={i18n}>
       <div className="h-100">
         <div
           className="bg-white overlay text-center text-lg-left py-5 py-lg-10 d-flex flex-column justify-content-center search__bg">
