@@ -20,7 +20,7 @@ class SearchView extends React.Component {
           className="bg-white overlay text-center text-lg-left py-5 py-lg-10 d-flex flex-column justify-content-center search__bg">
           <div className="container pt-5 mt-5">
             <h2 className="display-4 text-light mb-3">
-              Find your <span className="font-weight-bold">dream job!</span>
+              {i18n.t('search.findYour')} <span className="font-weight-bold">{i18n.t('search.dreamJob')}</span>
             </h2>
 
             <div
@@ -30,7 +30,7 @@ class SearchView extends React.Component {
                   className="fa fa-search fa-2x text-light absolute-top-left mt-2 ml-3 d-none d-lg-block"></i>
                 <input
                   className="form-control form-control-lg border-0 bg-transparent noshadow form-control-dark text-center text-lg-left pl-lg-5"
-                  type="text" placeholder="Job title ie. Web Developer"/>
+                  type="text" placeholder={i18n.t('search.searchInputPlaceholder')}/>
                 <hr className="hr-inverse hr-lg mx-auto mt-1 mb-0"/>
               </div>
               <div className="col-lg-3">
@@ -38,14 +38,16 @@ class SearchView extends React.Component {
                   className="btn btn-dark btn-rounded btn-lg px-5 py-lg-3 px-lg-5 d-lg-block w-100"
 
                   onClick={() => listJobs()}>
-                  Search
+                  {i18n.t('search.search')}
                 </button>
               </div>
             </div>
 
             <h6 className="text-light size my-0 font-weight-normal"
                 data-animate="fadeIn" data-animate-delay="0.6">
-              <span>Currently listing <span className="font-weight-bold">234 jobs.</span></span>
+              <span>{i18n.t('search.currentlyListing')}
+                <span className="font-weight-bold">{i18n.t('search.noJobs', {count: 254})}</span>
+              </span>
             </h6>
           </div>
         </div>
