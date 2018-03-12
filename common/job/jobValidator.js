@@ -3,7 +3,12 @@ const R = require('ramda')
 
 const validateJob = job => validateProperties(job, {valid: true}, jobProperties)
 
-const validateProperties = (job, validation, jobProperties) => R.reduce(validationPropsReducer(job), validation, jobProperties)
+const validateProperties = (job, validation, jobProperties) => {
+  const validationUpdated = R.reduce(validationPropsReducer(job), validation, jobProperties)
+  const notValid = R.keys(validationUpdated).some(p => validationUpdated[p].valid === false)
+
+  return R.assoc('valid', !notValid, validationUpdated)
+}
 
 // reducer for props
 const validationPropsReducer = job =>
