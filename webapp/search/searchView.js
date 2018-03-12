@@ -6,7 +6,6 @@ import * as R from 'ramda'
 
 import { listJobs } from '../job/actions'
 
-import PageTemplate from '../app-components/pageTemplate'
 import SearchResult from './searchResult/searchResult'
 
 class SearchView extends React.Component {
@@ -14,7 +13,7 @@ class SearchView extends React.Component {
   render () {
     const {listJobs, jobs, i18n} = this.props
 
-    return <PageTemplate i18n={i18n}>
+    return <React.Fragment>
       <div className="h-100">
         <div
           className="bg-white overlay text-center text-lg-left py-5 py-lg-10 d-flex flex-column justify-content-center search__bg">
@@ -60,8 +59,7 @@ class SearchView extends React.Component {
 
       }
 
-
-    </PageTemplate>
+    </React.Fragment>
 
   }
 }

@@ -2,15 +2,15 @@ import React from 'react'
 
 import DateRangePicker from '../../app-components/form/dateRangePicker'
 
-export const EditJobTextInputRow = ({job, field, label, placeholder, onChange, validation}) =>
+export const EditJobTextInputRow = ({i18n, job, field, label, placeholder, onChange, validation}) =>
   <div className="form-group row mb-md-4">
     <label htmlFor={field}
-           className="col-sm-2 col-form-label d-flex align-items-center">{label}</label>
+           className="col-sm-2 col-form-label d-flex align-items-center">{i18n.t(`editJob.property.${field}`)}</label>
     <div className="col d-flex align-items-center">
       <input type="text"
              className={`form-control${validation.valid ? '' : ' is-invalid'}`}
              id={field}
-             placeholder={placeholder}
+             placeholder={i18n.t(`editJob.propertyPlaceholder.${field}`)}
              value={job[field] ? job[field] : ''}
              onChange={e => onChange(field, e.target.value)}
       />
@@ -22,7 +22,7 @@ export const EditJobTextInputRow = ({job, field, label, placeholder, onChange, v
     </div>
   </div>
 
-export const EditJobTextAreaInputRow = ({job, field, label, placeholder, rows = 4, onChange}) =>
+export const EditJobTextAreaInputRow = ({i18n, job, field, label, placeholder, rows = 4, onChange}) =>
   <div className="form-group row mb-md-4">
     <label htmlFor={field}
            className="col-sm-2 col-form-label d-flex align-items-center">{label}</label>
@@ -38,7 +38,7 @@ export const EditJobTextAreaInputRow = ({job, field, label, placeholder, rows = 
     </div>
   </div>
 
-export const EditJobSelectInputRow = ({job, field, label, placeholder = 'Select', options = [], onChange}) =>
+export const EditJobSelectInputRow = ({i18n, job, field, label, placeholder = 'Select', options = [], onChange}) =>
   <div className="form-group row mb-md-4">
     <label htmlFor={field}
            className="col-sm-2 col-form-label d-flex align-items-center">{label}</label>
@@ -56,7 +56,7 @@ export const EditJobSelectInputRow = ({job, field, label, placeholder = 'Select'
     </div>
   </div>
 
-export const EditJobBooleanInputRow = ({job, field, label, onChange}) =>
+export const EditJobBooleanInputRow = ({i18n, job, field, label, onChange}) =>
   <div className="form-group row mb-md-4">
     <label
       className="col-sm-2 col-form-label d-flex align-items-center">{label}</label>
@@ -88,7 +88,7 @@ export const EditJobBooleanInputRow = ({job, field, label, onChange}) =>
     </div>
   </div>
 
-export const ApplicationPeriod = ({job, field, label, onChange}) => {
+export const ApplicationPeriod = ({i18n, job, field, label, onChange}) => {
   const fromField = `${field}From`
   const toField = `${field}To`
 
